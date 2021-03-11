@@ -20,10 +20,27 @@ function App() {
             className="inline-block px-4 py-2"
             activeClassName="text-yellow-300"
             exact
+            to="/user_book_clubs"
+          >
+            My Book Clubs
+          </NavLink>
+          <NavLink
+            className="inline-block px-4 py-2"
+            activeClassName="text-yellow-300"
+            exact
             to="/book_clubs/new"
           >
             New Book Club
           </NavLink>
+          <NavLink
+            className="inline-block px-4 py-2"
+            activeClassName="text-yellow-300"
+            exact
+            to="/books"
+          >
+            Books
+          </NavLink>
+
         </nav>
         <Switch>
           <Route exact path="/">
