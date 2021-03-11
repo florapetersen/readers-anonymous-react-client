@@ -1,4 +1,7 @@
 import React, { Component } from 'react';
+import uuid from 'uuid';
+import { connect } from 'react-reedux';
+import { addBookClub } from '../actions/bookClubs';
 
 export default class BookClubFormContainer extends Component {
     state = {
@@ -12,9 +15,16 @@ export default class BookClubFormContainer extends Component {
             [e.target.name]: e.target.value
         })
     }
-    
+
     handleSubmit = (e) => {
         e.preventDefault();
+        const bookClub = {...this.state, id: uuid() };
+        this.props.addBookClub(bookClub);
+        this.setState({
+            name: '',
+            category: '',
+            meetingTime: ''
+        });
     }
 
     render() {
@@ -52,3 +62,5 @@ export default class BookClubFormContainer extends Component {
         )
     }
 };
+
+export default connect(null, { addBookClub })(BookClubFormContainer);
