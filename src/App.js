@@ -2,6 +2,7 @@ import React from "react";
 import { BrowserRouter as Router, Switch, Route, NavLink } from "react-router-dom";
 import BookClubsIndexContainer from "./containers/BookClubsIndexContainer";
 import BookClubFormContainer from "./containers/BookClubFormContainer";
+import BooksIndexContainer from "./containers/BooksIndexContainer";
 
 function App() {
   return (
@@ -46,7 +47,11 @@ function App() {
           <Route exact path="/">
             <BookClubsIndexContainer />
           </Route>
-          <Route path="/book_clubs/new" render={(routerProps) => <BookClubFormContainer anotherProp="myProp" {...routerProps}/>}>
+          <Route path="/book_clubs/new">
+            <BookClubFormContainer />
+          </Route>
+          <Route path="/books">
+            <BooksIndexContainer />
           </Route>
         </Switch>
       </Router>
