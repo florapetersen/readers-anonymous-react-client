@@ -2,8 +2,10 @@ import React, { Component } from 'react';
 import BooksList from "../components/BooksList";
 
 export default class BooksIndexContainer extends Component {
+    
     state = {
-        books: []
+        books: [],
+        loading: true
     }
 
     componentDidMount() {
@@ -26,7 +28,13 @@ export default class BooksIndexContainer extends Component {
 
     render() {
         return (
-            <BooksList books={this.state.books} />
+            <section className="max-w-6xl w-11/12 mx-auto mt-16">
+                {this.state.loading ? (
+                    'loading spinner'
+                ) : (
+                    <BooksList books={this.state.books} />
+                )}
+            </section>
         )
     }
 }
