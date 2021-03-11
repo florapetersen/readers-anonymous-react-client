@@ -47,9 +47,7 @@ function App() {
           <Route exact path="/">
             <BookClubsIndexContainer />
           </Route>
-          <Route path="/book_clubs/new">
-            <BookClubFormContainer />
-          </Route>
+          <Route path="/book_clubs/new" component={BookClubFormContainer}/>
           <Route path="/books">
             <BooksIndexContainer />
           </Route>
