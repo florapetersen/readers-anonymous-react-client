@@ -1,5 +1,6 @@
-import React, { Component } from "react";
-import BookClubsList from "../components/BookClubsList";
+import React, { Component } from "react"
+import { connect } from 'react-redux'
+import BookClubsList from "../components/BookClubsList"
 
 export default class BookClubsIndexContainer extends Component {
     state = {

@@ -1,9 +1,9 @@
 import React, { Component } from 'react';
 import uuid from 'uuid';
-import { connect } from 'react-reedux';
+import { connect } from 'react-redux';
 import { addBookClub } from '../actions/bookClubs';
 
-export default class BookClubFormContainer extends Component {
+class BookClubFormContainer extends Component {
     state = {
         name: '',
         category: '',
@@ -57,10 +57,16 @@ export default class BookClubFormContainer extends Component {
                         className="w-full border p-4 my-4"
                     />
                 </fieldset>
-                <button className="w-full p-4 bg-blue-300 mt-4 hover:bg-blue-400 transition-all duration-200" type="submit">Add Book Club</button>
+                <button className="w-full p-4 bg-red-900 mt-4 hover:bg-yellow-400 transition-all duration-200" type="submit">Add Book Club</button>
             </form>
         )
     }
 };
 
-export default connect(null, { addBookClub })(BookClubFormContainer);
+const mapDispatchToProps = (dispatch) => {
+    return {
+        dispatchAddBookClub: (formData) => dispatch(addBookClub(formData))
+    }
+}
+
+export default connect(null, mapDispatchToProps)(BookClubFormContainer)

@@ -8,7 +8,7 @@ function App() {
   return (
     <div className="App">
       <Router>
-        <nav className="text-center bg-blue-900 text-yellow-100 p-4">
+        <nav className="text-center bg-red-800 text-white-100 p-4">
           <NavLink
             className="inline-block px-4 py-2"
             activeClassName="text-yellow-300"
@@ -39,7 +39,7 @@ function App() {
             exact
             to="/books"
           >
-            Books
+            Find Books
           </NavLink>
 
         </nav>

@@ -1,7 +1,6 @@
 import {
     START_LOADING_BOOKS,
     SUCCESSFULLY_LOADED_BOOKS,
-    FAILED_LOADING_BOOKS,
 } from '../actions'
 
 const initialState = {
