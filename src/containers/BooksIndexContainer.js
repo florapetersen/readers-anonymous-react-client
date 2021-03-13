@@ -5,6 +5,10 @@ import BooksList from "../components/BooksList";
 
 class BooksIndexContainer extends Component {
 
+    state = {
+        name: '',
+    }
+
     handleChange = (e) => {
         this.setState({
             [e.target.name]: e.target.value
@@ -13,7 +17,7 @@ class BooksIndexContainer extends Component {
 
     handleSubmit = (e) => {
         e.preventDefault();
-        this.props.fetchBooks()
+        this.props.dispatchFetchBooks(this.state.name)
     }
 
     render() {
@@ -25,6 +29,7 @@ class BooksIndexContainer extends Component {
                         <input
                             type="text"
                             name="name"
+                            value={this.state.name}
                             onChange={this.handleChange}
                             onSubmit={this.handleSubmit}
                             placeholder="Search by keyword"
@@ -33,21 +38,24 @@ class BooksIndexContainer extends Component {
                     </fieldset>
                     <button className="w-full p-4 bg-red-800 mt-4 hover:bg-yellow-400 transition-all duration-200" type="submit">Search</button>
                 </form>
-                <BooksList books={this.fetchBooks}/>
+                <BooksList books={this.props.books}/>
             </section>
         )
     }
 };
 
+// 
+
 const mapStateToProps = (state) => {
     return {
         books: state.books.list,
+        loading: state.books.loadingState,
     }
 }
 
 const mapDispatchToProps = (dispatch) => {
     return {
-        fetchBooks: () => dispatch(fetchBooks())
+        dispatchFetchBooks: (query) => dispatch(fetchBooks(query))
     }
 }
 

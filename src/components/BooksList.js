@@ -6,7 +6,7 @@ const BooksList = ({books}) => {
         <>
             <h1>Books that match your search</h1>
             <ul>
-                {books}
+                {books.map(book => <BookListItem key={book.id} book={book}/>)}
             </ul>
         </>
     )

@@ -1,9 +1,12 @@
 import { START_LOADING_BOOKS, SUCCESSFULLY_LOADED_BOOKS } from '.'
 
-export const fetchBooks = () => {
+const BASE_URL = 'https://www.googleapis.com/books/v1/volumes?q='
+
+export const fetchBooks = (query) => {
+    let URL = `${BASE_URL}${encodeURIComponent(query)}`
     return (dispatch) => {
         dispatch({ type: START_LOADING_BOOKS })
-        fetch('https://www.googleapis.com/books/v1/volumes?q=harrypotter', {
+        fetch(URL, {
             method: 'get',
             headers: {
                 Accept: 'application/json',
@@ -11,11 +14,12 @@ export const fetchBooks = () => {
             },
         })
             .then((res) => res.json())
-            .then((booksJson) => {
+            .then(({ items }) => {
                 dispatch({
                     type: SUCCESSFULLY_LOADED_BOOKS,
-                    payload: booksJson,
+                    payload: items
                 })
             })
     }
 }
+
