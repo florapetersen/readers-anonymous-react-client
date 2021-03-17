@@ -37,7 +37,8 @@ export default function bookClubsReducer(state = initialState, action) {
             }
         case DELETE_BOOK_CLUB:
             return {
-                bookClubs: state.list.filter(bookClub => bookClub.id !== action.payload)
+                ...state,
+                list: state.list.filter(bookClub => bookClub.id !== action.payload)
             }
     
       default:

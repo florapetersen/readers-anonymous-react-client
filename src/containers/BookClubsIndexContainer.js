@@ -1,7 +1,8 @@
-import React, { Component } from "react"
-import { connect } from 'react-redux'
+import React, { Component } from "react";
+import { connect } from 'react-redux';
 import { fetchBookClubs } from "../actions/bookClubs";
-import BookClubsList from "../components/BookClubsList"
+import BookClubsList from "../components/BookClubsList";
+import { deleteBookClub } from "../actions/bookClubs";
 
 class BookClubsIndexContainer extends Component {
 
@@ -18,7 +19,7 @@ class BookClubsIndexContainer extends Component {
                 {this.props.loadingState === "inProgress" ? (
                     "loading spinner"
                 ) : (
-                    <BookClubsList bookClubs={this.props.bookClubs} delete={this.props.delete}/>
+                    <BookClubsList bookClubs={this.props.bookClubs}/>
                 )}
             </section>
         );
@@ -36,7 +37,6 @@ const mapDispatchToProps = (dispatch) => {
     return {
         dispatchFetchBookClubs: () => dispatch(fetchBookClubs()),
         dispatchDeleteBookClub: (bookClubId) => dispatch(deleteBookClub(bookClubId))
-        //bookClub => dispatch({type: 'DELETE_TODO', payload: bookClub})
     }
 }
 

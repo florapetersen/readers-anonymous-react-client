@@ -6,8 +6,7 @@ const BookClubsList = (props) => {
         <>
             <h1>Book Clubs List</h1>
             <ul>
-                {bookClubs.map(bookClub => <BookClubListItem key={bookClub.id} bookClub={bookClub}/>)} 
-                <button onClick={() => props.delete(bookClub)}>DELETE</button>
+                {props.bookClubs.map(bookClub => <BookClubListItem key={bookClub.id} bookClub={bookClub}/>)} 
             </ul>
         </>
     )

@@ -41,6 +41,19 @@ export const fetchBookClub = (bookClubId) => {
     };
   };
 
+  export const deleteBookClub = (bookClubId) => {
+      return (dispatch) => {
+          fetch(`http://localhost:3001/book_clubs/${bookClubId}`, {
+            method: 'DELETE',
+            headers: {
+              "Accept": "application/json",
+              "Content-Type": "application/json",
+            },
+          })
+          .then(() => dispatch({ type: DELETE_BOOK_CLUB, payload: bookClubId }))
+      }
+  };
+
   export const createBookClub = (formData) => {
     return (dispatch) => {
       return fetch('http://localhost:3001/book_clubs', {
