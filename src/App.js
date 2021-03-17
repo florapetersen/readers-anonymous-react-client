@@ -3,6 +3,7 @@ import { BrowserRouter as Router, Switch, Route, NavLink } from "react-router-do
 import BookClubsIndexContainer from "./containers/BookClubsIndexContainer";
 import BookClubFormContainer from "./containers/BookClubFormContainer";
 import BooksIndexContainer from "./containers/BooksIndexContainer";
+import BookClubShowContainer from "./containers/BookClubShowContainer";
 
 function App() {
   return (
@@ -41,16 +42,14 @@ function App() {
           >
             Find Books
           </NavLink>
-
         </nav>
         <Switch>
-          <Route exact path="/">
-            <BookClubsIndexContainer />
-          </Route>
-          <Route path="/book_clubs/new" component={BookClubFormContainer}/>
+          <Route path="/book_clubs/new" component={BookClubFormContainer} />
+          <Route exact path="/" component={BookClubsIndexContainer} />
           <Route path="/books">
             <BooksIndexContainer />
           </Route>
+          <Route path = "/bookClubs/:id" component={BookClubShowContainer} />
         </Switch>
       </Router>
     </div>
