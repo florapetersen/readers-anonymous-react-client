@@ -2,6 +2,7 @@ import React, { Component } from 'react';
 import { connect } from "react-redux";
 import { fetchBookClub } from "../actions/bookClubs";
 import BookClub from "../components/BookClub";
+import Book from "../components/Book";
 
 class BookShowContainer extends Component {
     state = {
@@ -41,4 +42,4 @@ const mapDispatchToProps = (dispatch) => {
     }
 };
 
-export default connect(mapStateToProps, mapDispatchToProps)(BookClubShowContainer)
+export default connect(mapStateToProps, mapDispatchToProps)(BookShowContainer)

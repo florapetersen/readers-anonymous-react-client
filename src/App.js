@@ -4,6 +4,7 @@ import BookClubsIndexContainer from "./containers/BookClubsIndexContainer";
 import BookClubFormContainer from "./containers/BookClubFormContainer";
 import BooksIndexContainer from "./containers/BooksIndexContainer";
 import BookClubShowContainer from "./containers/BookClubShowContainer";
+import BookShowContainer from "./containers/BookShowContainer";
 
 function App() {
   return (
@@ -50,6 +51,7 @@ function App() {
             <BooksIndexContainer />
           </Route>
           <Route path = "/bookClubs/:id" component={BookClubShowContainer} />
+          <Route path = "books/:id" component={BookShowContainer} />
         </Switch>
       </Router>
     </div>
