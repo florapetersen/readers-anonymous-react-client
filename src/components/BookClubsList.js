@@ -1,12 +1,12 @@
 import React from "react";
 import BookClubListItem from './BookClubListItem';
 
-const BookClubsList = (props) => {
+const BookClubsList = ({ bookClubs }) => {
     return (
         <>
             <h1>Book Clubs List</h1>
             <ul>
-                {props.bookClubs.map(bookClub => <BookClubListItem key={bookClub.id} bookClub={bookClub}/>)} 
+                {bookClubs.map(bookClub => <BookClubListItem key={bookClub.id} bookClub={bookClub}/>)} 
             </ul>
         </>
     )
