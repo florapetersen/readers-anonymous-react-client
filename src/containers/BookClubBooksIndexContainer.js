@@ -1,13 +1,12 @@
 import React, { Component } from "react";
 import { connect } from 'react-redux';
-import { fetchBookClubs } from "../actions/bookClubs";
-import BookClubsList from "../components/BookClubsList";
-import { deleteBookClub } from "../actions/bookClubs";
+import BookClubBooksList from "../components/BookClubBooksList";
+import { createBookClubBook } from "../actions/bookClubBooks";
 
-class BookClubsIndexContainer extends Component {
+class BookClubBooksIndexContainer extends Component {
 
     componentDidMount() {
-        this.props.dispatchFetchBookClubs() ;
+        this.props.dispatchCreateBookClubBook() ;
     }
 
     render() {
@@ -19,7 +18,7 @@ class BookClubsIndexContainer extends Component {
                 {this.props.loadingState === "inProgress" ? (
                     "loading spinner"
                 ) : (
-                    <BookClubsList bookClubs={this.props.bookClubs}/>
+                    <BookClubBooksList bookClubBooks={this.props.bookClubBooks}/>
                 )}
             </section>
         );
@@ -28,16 +27,15 @@ class BookClubsIndexContainer extends Component {
 
 const mapStateToProps = (state) => {
     return {
-        bookClubs: state.bookClubs.list,
-        loadingState: state.bookClubs.loadingState
+        bookClubBooks: state.bookClubBooks.list,
+        loadingState: state.bookClubBooks.loadingState
     }
 }
 
 const mapDispatchToProps = (dispatch) => {
     return {
-        dispatchFetchBookClubs: () => dispatch(fetchBookClubs()),
-        dispatchDeleteBookClub: (bookClubId) => dispatch(deleteBookClub(bookClubId))
+        dispatchCreateBookClubBook: (bookClub, book) => dispatch(createBookClubBook(bookClub, book)),
     }
 }
 
-export default connect(mapStateToProps, mapDispatchToProps)(BookClubsIndexContainer)
+export default connect(mapStateToProps, mapDispatchToProps)(BookClubBooksIndexContainer)

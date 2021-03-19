@@ -1,4 +1,5 @@
 import React from 'react';
+import BookClubDropDown from './BookClubDropDown';
 
 const Book = ({ book }) => {
     return (
@@ -6,7 +7,7 @@ const Book = ({ book }) => {
             <h1>{book.volumeInfo.title}</h1>
             <h2>{book.volumeInfo.authors}</h2>
             <text>{book.volumeInfo.description}</text>
-            <button>Read this book!</button>
+            <BookClubDropDown/>Read this book!
         </div>
     )
 }
