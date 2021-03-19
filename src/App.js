@@ -47,11 +47,11 @@ function App() {
         <Switch>
           <Route path="/book_clubs/new" component={BookClubFormContainer} />
           <Route exact path="/" component={BookClubsIndexContainer} />
-          <Route path="/books">
+          <Route exact path="/books">
             <BooksIndexContainer />
           </Route>
           <Route path = "/bookClubs/:id" component={BookClubShowContainer} />
-          <Route path = "books/:id" component={BookShowContainer} />
+          <Route exact path = "/books/:id" component={BookShowContainer} />
         </Switch>
       </Router>
     </div>

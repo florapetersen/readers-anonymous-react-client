@@ -3,6 +3,7 @@ import { connect } from "react-redux";
 import { fetchBookClub } from "../actions/bookClubs";
 import BookClub from "../components/BookClub";
 import Book from "../components/Book";
+import { fetchBook } from "../actions/books";
 
 class BookShowContainer extends Component {
     state = {
@@ -13,6 +14,7 @@ class BookShowContainer extends Component {
     componentDidMount() {
         const bookId = this.props.match.params.id;
         this.props.dispatchFetchBook(bookId)
+
     }
 
     render() {
@@ -29,9 +31,10 @@ class BookShowContainer extends Component {
     }
 }
 
-const mapStateToProps = (state) => {
+const mapStateToProps = (state, { match }) => {
+    const bookId = match.params.id
     return {
-        book: state.books.list,
+        book: state.books.list.find((book) => book.id == bookId),
         loadingState: state.books.loadingState
     }
 };
