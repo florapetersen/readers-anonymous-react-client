@@ -1,4 +1,15 @@
-# Getting Started with Create React App
+# Readers Anonymous
+
+This app is an online community where users can find, create and join book clubs.
+
+## Quick Instructions
+
+1. in the terminal, run ```yarn install```
+2. run ```yarn start``` 
+3. for the backend API (https://github.com/florapetersen/readers-anonymous-api), clone the repository, run ```bundle install``` and run ```rails s``` to start the server.
+4. Enjoy!
+
+## Getting Started with Create React App
 
 This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
 
