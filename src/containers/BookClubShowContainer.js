@@ -28,9 +28,10 @@ class BookClubShowContainer extends Component {
     }
 }
 
-const mapStateToProps = (state) => {
+const mapStateToProps = (state, { match }) => {
+    const bookClubId = match.params.id
     return {
-        bookClub: state.bookClubs.list,
+        bookClub: state.bookClubs.list.find(bookClub => bookClub.id == bookClubId),
         loadingState: state.bookClubs.loadingState
     }
 };

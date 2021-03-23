@@ -28,19 +28,18 @@ export default function bookClubsReducer(state = initialState, action) {
             return {
                 ...state, 
                 loadingState: "successful",
-                list: action.payload
-                };
+                list: [ ...state.list.filter(bookClub => bookClub.id !== action.payload.id), action.payload ]
+            };
         case SUCCESSFULLY_CREATED_BOOK_CLUB:
             return {
-            ...state,
-            list: state.list.concat(action.payload)
-            }
+                ...state,
+                list: state.list.concat(action.payload)
+            };
         case DELETE_BOOK_CLUB:
             return {
                 ...state,
                 list: state.list.filter(bookClub => bookClub.id !== action.payload)
             }
-    
       default:
         return state;
     }

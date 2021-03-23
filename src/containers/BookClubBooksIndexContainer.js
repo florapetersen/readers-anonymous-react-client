@@ -1,12 +1,13 @@
 import React, { Component } from "react";
 import { connect } from 'react-redux';
+import { fetchBookClubBooks } from "../actions/bookClubBooks";
 import BookClubBooksList from "../components/BookClubBooksList";
-import { createBookClubBook } from "../actions/bookClubBooks";
 
 class BookClubBooksIndexContainer extends Component {
 
     componentDidMount() {
-        this.props.dispatchCreateBookClubBook() ;
+        const bookClubId = this.props.match.params.id;
+        this.props.dispatchFetchBookClubBooks(bookClubId) ;
     }
 
     render() {
@@ -18,7 +19,7 @@ class BookClubBooksIndexContainer extends Component {
                 {this.props.loadingState === "inProgress" ? (
                     "loading spinner"
                 ) : (
-                    <BookClubBooksList bookClubBooks={this.props.bookClubBooks}/>
+                  <BookClubBooksList />  
                 )}
             </section>
         );
@@ -34,7 +35,7 @@ const mapStateToProps = (state) => {
 
 const mapDispatchToProps = (dispatch) => {
     return {
-        dispatchCreateBookClubBook: (bookClub, book) => dispatch(createBookClubBook(bookClub, book)),
+        dispatchFetchBookClubBooks: (bookClubId) => dispatch(fetchBookClubBooks(bookClubId)),
     }
 }
 

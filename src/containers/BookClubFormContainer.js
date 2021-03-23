@@ -22,12 +22,11 @@ class BookClubFormContainer extends Component {
             .then((bookClubJson) => {
                 this.props.history.push(`/bookClubs/${bookClubJson.id}`);
             })
-            .catch(errors => {
-                this.setState({
-                    errors
-                })
-                console.log(errors)
-            })
+            // .catch(errors => {
+            //     this.setState({
+            //         errors
+            //     })
+            // })
     }
 
     render() {

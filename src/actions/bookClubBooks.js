@@ -31,10 +31,10 @@ export const createBookClubBook = (bookClub, book) => {
     }
   }
 
-  export const fetchBookClubBooks = (bookClub) => {
+  export const fetchBookClubBooks = (bookClubId) => {
     return (dispatch) => {
         dispatch({type: START_LOADING_BOOK_CLUB_BOOKS})
-        fetch("http://localhost:3001/book_clubs/:id/book_club_books", {
+        fetch(`http://localhost:3001/book_clubs/${bookClubId}/book_club_books`, {
             method: "get",
             headers: {
                 Accept: "application/json",

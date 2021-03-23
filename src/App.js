@@ -6,6 +6,7 @@ import BooksIndexContainer from "./containers/BooksIndexContainer";
 import BookClubShowContainer from "./containers/BookClubShowContainer";
 import BookShowContainer from "./containers/BookShowContainer";
 import BookClubBooksIndexContainer from "./containers/BookClubBooksIndexContainer";
+import BookClubBookFormContainer from "./containers/BookClubBookFormContainer";
 
 function App() {
   return (
@@ -51,9 +52,10 @@ function App() {
           <Route exact path="/books">
             <BooksIndexContainer />
           </Route>
-          <Route path = "/bookClubs/:id" component={BookClubShowContainer} />
+          <Route exact path = "/bookClubs/:id" component={BookClubShowContainer} />
           <Route exact path = "/books/:id" component={BookShowContainer} />
           <Route path = "/bookClubs/:id/book_club_books" component={BookClubBooksIndexContainer} />
+          <Route path = "bookClubBooks/new" component={BookClubBookFormContainer} />
         </Switch>
       </Router>
     </div>

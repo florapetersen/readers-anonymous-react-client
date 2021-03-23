@@ -4,12 +4,13 @@ const BookClub = ({ bookClub }) => {
     console.log(bookClub)
     return (
         <div> 
-            <h1>{bookClub.bookClub.name}</h1>
-            <h1>{bookClub.bookClub.category}</h1>
-            <h1>{bookClub.bookClub.description}</h1>
-            <h1>{bookClub.bookClub.meeting_time}</h1>
+            <p><h1>{bookClub.name}</h1></p>
+            <p><h1>Category: {bookClub.category}</h1>
+            <h1>About us: {bookClub.description}</h1></p>
         </div>
     )
 }
 
 export default BookClub
+
+//<h1>{bookClub.bookClub.meeting_time}</h1>

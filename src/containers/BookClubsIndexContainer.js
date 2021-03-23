@@ -19,7 +19,8 @@ class BookClubsIndexContainer extends Component {
                 {this.props.loadingState === "inProgress" ? (
                     "loading spinner"
                 ) : (
-                    <BookClubsList bookClubs={this.props.bookClubs}/>
+                    <div><p>Welcome to Readers Anonymous!</p>
+                    <BookClubsList bookClubs={this.props.bookClubs}/></div>
                 )}
             </section>
         );

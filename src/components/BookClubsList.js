@@ -4,7 +4,7 @@ import BookClubListItem from './BookClubListItem';
 const BookClubsList = ({ bookClubs }) => {
     return (
         <>
-            <h1>Book Clubs List</h1>
+            <p><h1>Browse Book Clubs:</h1></p>
             <ul>
                 {bookClubs.map(bookClub => <BookClubListItem key={bookClub.id} bookClub={bookClub}/>)} 
             </ul>
