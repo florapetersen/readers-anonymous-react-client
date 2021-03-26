@@ -7,6 +7,7 @@ import { fetchBookClubs } from "../actions/bookClubs";
 class BookClubDropDown extends Component {
     constructor(props) {
         super(props);
+        //this.selectBookClub = this.selectBookClub.bind(this);
         this.state = {
             bookClubs: [],
         }
