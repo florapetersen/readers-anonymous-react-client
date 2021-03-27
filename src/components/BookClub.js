@@ -8,11 +8,9 @@ const BookClub = ({ bookClub }) => {
             <p><h1>{bookClub.name}</h1></p>
             <p><h1>Category: {bookClub.category}</h1>
             <h1>About us: {bookClub.description}</h1></p>
-            <Link to={UserBookClubFormContainer}>Join this club!</Link>
+            <Link to={`/userBookClubs/new}`}>Join this club!</Link>
         </div>
     )
 }
 
 export default BookClub
-
-//<h1>{bookClub.bookClub.meeting_time}</h1>
