@@ -2,12 +2,12 @@ import React from 'react';
 import { connect } from 'react-redux';
 import { Component } from 'react';
 import { fetchBookClubs } from "../actions/bookClubs";
+import { createBookClubBook } from "../actions/bookClubBooks";
 
 
 class BookClubDropDown extends Component {
     constructor(props) {
         super(props);
-        //this.selectBookClub = this.selectBookClub.bind(this);
         this.state = {
             bookClubs: [],
         }
@@ -15,6 +15,12 @@ class BookClubDropDown extends Component {
 
     componentDidMount() {
         this.props.dispatchFetchBookClubs() ;
+    }
+
+    selectBookClub = (e) => {
+        let bookClubBookId = e.target.value;
+        console.log(bookClubBookId);
+        this.props.dispatchCreateBookClubBook(bookClubBookId)
     }
 
     render() {
@@ -27,7 +33,7 @@ class BookClubDropDown extends Component {
 
             return (
                 <div>
-                    <select>
+                    <select onChange={this.selectBookClub}>
                         {bookClubsList}
                     </select>
                 </div>
@@ -45,6 +51,7 @@ const mapStateToProps = (state) => {
 const mapDispatchToProps = (dispatch) => {
     return {
         dispatchFetchBookClubs: () => dispatch(fetchBookClubs()),
+        dispatchCreateBookClubBook: (bookClubBookId) => dispatch(createBookClubBook(bookClubBookId))
     }
 }
 
