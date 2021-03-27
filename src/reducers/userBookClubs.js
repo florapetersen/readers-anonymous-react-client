@@ -14,5 +14,7 @@ export default function userBookClubsReducer(state = initialState, action) {
                 ...state,
                 list: state.list.concat(action.payload)
             };
-        };
+    default:
+        return state;
+    };
 };

@@ -1,5 +1,6 @@
 import React, { Component } from 'react';
 import { connect } from 'react-redux';
+import { createUserBookClub } from '../actions/userBookClubs';
 
 class UserBookClubFormContainer extends Component {
     state = {
@@ -7,9 +8,9 @@ class UserBookClubFormContainer extends Component {
         bookClubId: ''
     }
 
-    componentDidMount() {
-        dispatchCreateUserBookClub()
-    }
+    //componentDidMount() {
+        //dispatchCreateUserBookClub()
+    //}
     
     handleChange = (e) => {
         this.setState({
@@ -31,7 +32,9 @@ class UserBookClubFormContainer extends Component {
     }
 
     render() {
-
+        return (
+            <h1>Hello World!</h1>
+        )
     }
 };
 
