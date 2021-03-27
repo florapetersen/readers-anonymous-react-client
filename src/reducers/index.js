@@ -6,5 +6,6 @@ import bookClubBooksReducer from "./bookClubBooks";
 export default combineReducers({
     books: booksReducer,
     bookClubs: bookClubsReducer,
-    bookClubBooks: bookClubBooksReducer
+    bookClubBooks: bookClubBooksReducer,
+    userBookClubs: userBookClubsReducer
 })
