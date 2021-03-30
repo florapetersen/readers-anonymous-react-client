@@ -6,8 +6,8 @@ import { deleteBookClub } from '../actions/bookClubs'
 const BookClubListItem = ({ bookClub, dispatchDeleteBookClub }) => {
     return (
         <li className="" key={bookClub.id}>
-            <Link to={`/bookClubs/${bookClub.id}`}>{bookClub.name}</Link>
-            <button onClick={() => dispatchDeleteBookClub(bookClub.id)}>DELETE</button>
+            <Link to={`/bookClubs/${bookClub.id}`}>{bookClub.name} </Link>
+            <button onClick={() => dispatchDeleteBookClub(bookClub.id)}> DELETE</button>
         </li>
     )
 }

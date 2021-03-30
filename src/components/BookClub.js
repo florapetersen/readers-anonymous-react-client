@@ -1,6 +1,8 @@
 import React from 'react';
+import { connect } from 'react-redux';
+import { deleteBookClub } from '../actions/bookClubs';
 
-const BookClub = ({ bookClub }) => {
+const BookClub = ({ bookClub, dispatchDeleteBookClub }) => {
     console.log(bookClub)
     return (
         <div> 
@@ -11,6 +13,12 @@ const BookClub = ({ bookClub }) => {
     )
 }
 
-export default BookClub
+const mapDispatchToProps = (dispatch) => {
+    return {
+        dispatchDeleteBookClub: (bookClubId) => dispatch(deleteBookClub(bookClubId))
+    }
+}
+
+export default connect(null, mapDispatchToProps)(BookClub)
 
 //<h1>{bookClub.bookClub.meeting_time}</h1>
