@@ -8,9 +8,9 @@ class UserBookClubFormContainer extends Component {
         bookClubId: ''
     }
 
-    //componentDidMount() {
-        //dispatchCreateUserBookClub()
-    //}
+    componentDidMount() {
+        dispatchCreateUserBookClub(userId, bookClubId)
+    }
     
     handleChange = (e) => {
         this.setState({
@@ -40,7 +40,7 @@ class UserBookClubFormContainer extends Component {
 
 const mapDispatchToProps = (dispatch) => {
     return {
-        dispatchCreateUserBookClub: () => dispatch(createUserBookClub())
+        dispatchCreateUserBookClub: (userId, bookClubId) => dispatch(createUserBookClub(userId, bookClubId))
     }
 }
 
