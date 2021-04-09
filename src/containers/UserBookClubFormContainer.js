@@ -4,12 +4,8 @@ import { createUserBookClub } from '../actions/userBookClubs';
 
 class UserBookClubFormContainer extends Component {
     state = {
-        userId: '',
-        bookClubId: ''
-    }
-
-    componentDidMount() {
-        dispatchCreateUserBookClub(userId, bookClubId)
+        bookClub: this.props.bookClub,
+        name: ''
     }
     
     handleChange = (e) => {
@@ -20,27 +16,36 @@ class UserBookClubFormContainer extends Component {
 
     handleSubmit = (e) => {
         e.preventDefault();
-        this.props.dispatchCreateBookClub(this.state)
-            .then((bookClubJson) => {
-                this.props.history.push(`/bookClubs/${bookClubJson.id}`);
-            })
-            .catch(errors => {
-                this.setState({
-                    errors
-                })
-            })
+        this.props.dispatchCreateUserBookClub(this.state.bookClub)
     }
 
     render() {
+        console.log("hi")
         return (
-            <h1>Hello World!</h1>
+            <form onSubmit={this.handleSubmit} className="max-w-6xl w-3/4 mx-auto mt-16 shadow-lg px-4 py-6">
+                <h1 className="text-center text-3xl font-semibold mb-2">Join Book Club</h1>
+                <fieldset>
+                    <input
+                        type="text"
+                        name="name"
+                        onChange={this.handleChange}
+                        value={this.state.name}
+                        placeholder="What is your name?"
+                        className={`w-full border focus:outline-none focus:ring-2 p-4 mb-4  ${
+                            this.state.errors.name && "focus:ring-red-400 border-red-400"
+                        }`}
+                    />
+                </fieldset>
+                <button className="w-full p-4 bg-red-900 mt-4 hover:bg-yellow-400 transition-all duration-200" type="submit">Join Book Club</button>
+            </form>
+    
         )
     }
 };
 
 const mapDispatchToProps = (dispatch) => {
     return {
-        dispatchCreateUserBookClub: (userId, bookClubId) => dispatch(createUserBookClub(userId, bookClubId))
+        dispatchCreateUserBookClub: (bookClub) => dispatch(createUserBookClub(bookClub))
     }
 }
 
