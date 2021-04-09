@@ -2,7 +2,7 @@ import {
     SUCCESSFULLY_CREATED_USER_BOOK_CLUB,
 } from ".";
 
-export const createUserBookClub = (userId, bookClubId) => {
+export const createUserBookClub = (bookClub) => {
     return (dispatch) => {
       return fetch('http://localhost:3001/user_book_clubs', {
         method: 'POST',
@@ -10,7 +10,7 @@ export const createUserBookClub = (userId, bookClubId) => {
           "Accept": "application/json",
           "Content-Type": "application/json",
         },
-        body: JSON.stringify({user_book_club: user_id, book_club_id})
+        body: JSON.stringify({user_book_club: bookClub})
       })
         .then(res => {
           if (res.ok) {
