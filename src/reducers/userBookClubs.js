@@ -1,5 +1,7 @@
 import { 
     SUCCESSFULLY_CREATED_USER_BOOK_CLUB,
+    START_LOADING_USER_BOOK_CLUB,
+    SUCCESSFULLY_LOADED_USER_BOOK_CLUB
 } from "../actions";
 
 const initialState = {
@@ -14,7 +16,15 @@ export default function userBookClubsReducer(state = initialState, action) {
                 ...state,
                 list: state.list.concat(action.payload)
             };
-    default:
-        return state;
-    };
+        case START_LOADING_USER_BOOK_CLUB:
+            return { 
+                ...state, loadingState: "inProgress" };
+        case SUCCESSFULLY_LOADED_USER_BOOK_CLUB:
+            return {
+                ...state, 
+                loadingState: "successful",
+                list: [ ...state.list.filter(bookClub => bookClub.id !== action.payload.id), action.payload ]};
+        default:
+            return state;
+    }   
 };
