@@ -5,7 +5,8 @@ import { createUserBookClub } from '../actions/userBookClubs';
 class UserBookClubFormContainer extends Component {
     state = {
         bookClub: this.props.bookClub,
-        name: ''
+        name: '',
+        errors: {}
     }
     
     handleChange = (e) => {
