@@ -4,7 +4,7 @@ import { createUserBookClub } from '../actions/userBookClubs';
 
 class UserBookClubFormContainer extends Component {
     state = {
-        bookClub: this.props.bookClub,
+        userBookClub: this.props.bookClub,
         name: '',
         errors: {}
     }
@@ -17,7 +17,15 @@ class UserBookClubFormContainer extends Component {
 
     handleSubmit = (e) => {
         e.preventDefault();
-        this.props.dispatchCreateUserBookClub(this.state.bookClub)
+        this.props.dispatchCreateUserBookClub(this.state.userBookClub)
+            .then((bookClubJson) => {
+                this.props.history.push(`/bookClubs/${bookClubJson.id}`);
+            })
+            .catch(errors => {
+                this.setState({
+                    errors
+                })
+            })
     }
 
     render() {
