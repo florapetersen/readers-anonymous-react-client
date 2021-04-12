@@ -1,5 +1,7 @@
 import {
     SUCCESSFULLY_CREATED_USER_BOOK_CLUB,
+    START_LOADING_USER_BOOK_CLUB,
+    SUCCESSFULLY_LOADED_USER_BOOK_CLUB
 } from ".";
 
 export const createUserBookClub = (bookClub) => {
@@ -28,3 +30,17 @@ export const createUserBookClub = (bookClub) => {
         })
     }
   }
+
+  export const fetchUserBookClub = (userBookClubId) => {
+    return (dispatch) => {
+      dispatch({ type: START_LOADING_USER_BOOK_CLUB, payload: userBookClubId });
+      fetch(`http://localhost:3001/user_book_clubs/${userBookClubId}`)
+        .then((res) => res.json())
+        .then((userBookClubJson) => {
+          dispatch({
+            type: SUCCESSFULLY_LOADED_USER_BOOK_CLUB,
+            payload: userBookClubJson
+          })
+        });
+    };
+  };
