@@ -1,5 +1,6 @@
 import React, { Component } from 'react';
-import BookClub from "../components/BookClub";
+import { fetchUserBookClub } from "../actions/userBookClubs";
+import { connect } from "react-redux";
 
 class BookClubShowContainer extends Component {
     state = {
@@ -29,14 +30,14 @@ class BookClubShowContainer extends Component {
 const mapStateToProps = (state, { match }) => {
     const userBookClubId = match.params.id
     return {
-        userBookClub: state.userBookClubs.list.find(userBookClub => bookClub.id == bookClubId),
-        loadingState: state.bookClubs.loadingState
+        userBookClub: state.userBookClubs.list.find(userBookClub => userBookClub.id == userBookClubId),
+        loadingState: state.userBookClubs.loadingState
     }
 };
 
 const mapDispatchToProps = (dispatch) => {
     return {
-        dispatchFetchBookClub: (bookClubId) => dispatch(fetchBookClub(bookClubId))
+        dispatchFetchUserBookClub: (userBookClubId) => dispatch(fetchUserBookClub(userBookClubId))
     }
 };
 
