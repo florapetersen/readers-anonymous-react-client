@@ -23,7 +23,7 @@ export default function userBookClubsReducer(state = initialState, action) {
             return {
                 ...state, 
                 loadingState: "successful",
-                list: [ ...state.list.filter(bookClub => bookClub.id !== action.payload.id), action.payload ]};
+                list: [ ...state.list.filter(userBookClub => userBookClub.id !== action.payload.id), action.payload ]};
         default:
             return state;
     }   
