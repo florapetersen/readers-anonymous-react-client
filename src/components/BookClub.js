@@ -1,15 +1,24 @@
 import React from 'react'
-import { Link } from 'react-router-dom'
+import { connect } from 'react-redux'
+import {createUserBookClub} from "../actions/userBookClubs"
 
-const BookClub = ({ bookClub }) => {
+const BookClub = ({ bookClub, dispatchCreateUserBookClub }) => {
+
     return (
         <div> 
             <p><h1>{bookClub.name}</h1></p>
             <p><h1>Category: {bookClub.category}</h1>
             <h1>About us: {bookClub.description}</h1></p>
-            <Link to={`/userBookClubs/new`} bookClub={bookClub}>Join this club!</Link>
+            <button onClick={() => dispatchCreateUserBookClub(bookClub)}>Join this club!</button>
         </div>
     )
 }
 
-export default BookClub
+const mapDispatchToProps = (dispatch) => {
+    return {
+        dispatchCreateUserBookClub: (bookClub) => dispatch(createUserBookClub(bookClub))
+    }
+}
+
+
+export default connect(null, mapDispatchToProps)(BookClub)
