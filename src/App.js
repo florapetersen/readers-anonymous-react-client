@@ -57,7 +57,6 @@ function App() {
           <Route exact path = "/books/:id" component={BookShowContainer} />
           <Route path = "/bookClubs/:id/book_club_books" component={BookClubBooksIndexContainer} />
           <Route path = "/bookClubBooks/new" component={BookClubBookFormContainer} />
-          <Route path = "/userBookClubs/new" component={UserBookClubFormContainer} />
           <Route path = "/userBookClubs/:id" component={UserBookClubShowContainer} />
         </Switch>
       </Router>
