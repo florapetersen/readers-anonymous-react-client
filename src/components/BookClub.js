@@ -1,13 +1,16 @@
 import React from 'react'
 import { connect } from 'react-redux'
 import {createUserBookClub} from "../actions/userBookClubs"
-import Flash from './Flash'
+import {addFlashMessage} from "../actions/flash"
 
-const BookClub = ({ bookClub, dispatchCreateUserBookClub }) => {
+const BookClub = ({ bookClub, dispatchCreateUserBookClub, dispatchAddFlashMessage }) => {
 
     function handleClick(e) {
         dispatchCreateUserBookClub(bookClub);
-        <Flash bookClub={bookClub}/>
+        dispatchAddFlashMessage({
+            type: 'success',
+            text: 'You have joined this book club'
+        });
     }
 
     return (
@@ -22,7 +25,8 @@ const BookClub = ({ bookClub, dispatchCreateUserBookClub }) => {
 
 const mapDispatchToProps = (dispatch) => {
     return {
-        dispatchCreateUserBookClub: (bookClub) => dispatch(createUserBookClub(bookClub))
+        dispatchCreateUserBookClub: (bookClub) => dispatch(createUserBookClub(bookClub)),
+        dispatchAddFlashMessage: (message) => dispatch(addFlashMessage(message))
     }
 }
 
