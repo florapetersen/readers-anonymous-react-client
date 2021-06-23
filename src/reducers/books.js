@@ -10,7 +10,7 @@ const initialState = {
     list: [],
 }
 
-export default function BooksReducer(state = initialState, action) {
+export default function booksReducer(state = initialState, action) {
     switch (action.type) {
         case START_LOADING_BOOKS:
             return { ...state, loadingState: 'inProgress' }
