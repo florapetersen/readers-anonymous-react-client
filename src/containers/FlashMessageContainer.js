@@ -1,5 +1,5 @@
 import React, { Component } from 'react';
-import FlashMessagesList from './flash/FlashMessagesList';
+import FlashMessagesList from '../components/FlashMessagesList';
 
 class FlashMessage extends Component {
 
