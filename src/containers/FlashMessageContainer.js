@@ -1,13 +1,16 @@
 import React, { Component } from 'react';
+import FlashMessagesList from './flash/FlashMessagesList';
 
 class FlashMessage extends Component {
-    state = {
-        message = ""
-    }
 
     render() {
-
+        return (
+            <div id="flash-message">
+                <FlashMessagesList />
+            </div>
+        )
     }
+
 }
 
-export default FlashMessage
+export default FlashMessage;
