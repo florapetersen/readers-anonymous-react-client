@@ -1,7 +1,12 @@
 import { ADD_FLASH_MESSAGE } from '../actions'
 import shortid from 'shortid';
 
-export default function flashMessagesReducer(state = [], action) {
+const initialState = {
+    loadingState: "notStarted",
+    flashMessages: []
+}
+
+export default function flashMessagesReducer(state = initialState, action) {
     switch (action.type) {
         case ADD_FLASH_MESSAGE:
             return [
