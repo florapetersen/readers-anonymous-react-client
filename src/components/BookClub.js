@@ -12,6 +12,7 @@ const BookClub = ({ bookClub, dispatchCreateUserBookClub}) => {
     function handleClick(e) {
         dispatchCreateUserBookClub(bookClub);
         flashSuccess("Success", <u>{message}</u>, () => alert("Success flash message"))
+        flashError("Error", <u>{message}</u>, () => alert("Error!"))
     }
 
     return (
