@@ -14,6 +14,7 @@ const BookClub = ({ bookClub, dispatchCreateUserBookClub}) => {
         flashSuccess("Success", <u>{message}</u>, () => alert("Success flash message"))
         flashError("Error", <u>{message}</u>, () => alert("Error!"))
         flashWarning("Warning", <u>{message}</u>, () => alert("Warning!"))
+        flashInfo("Info", <u>{message}</u>, () => alert("Info"))
     }
 
     return (
