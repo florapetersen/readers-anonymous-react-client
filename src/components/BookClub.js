@@ -31,7 +31,6 @@ const BookClub = ({ bookClub, dispatchCreateUserBookClub}) => {
 const mapDispatchToProps = (dispatch) => {
     return {
         dispatchCreateUserBookClub: (bookClub) => dispatch(createUserBookClub(bookClub)),
-        dispatchAddFlashMessage: (message) => dispatch(addFlashMessage(message))
     }
 }
 
