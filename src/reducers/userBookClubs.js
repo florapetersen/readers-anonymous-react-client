@@ -1,7 +1,9 @@
 import { 
     SUCCESSFULLY_CREATED_USER_BOOK_CLUB,
     START_LOADING_USER_BOOK_CLUB,
-    SUCCESSFULLY_LOADED_USER_BOOK_CLUB
+    SUCCESSFULLY_LOADED_USER_BOOK_CLUB,
+    START_LOADING_USER_BOOK_CLUBS,
+    SUCCESSFULLY_LOADED_USER_BOOK_CLUBS
 } from "../actions";
 
 const initialState = {
@@ -11,6 +13,13 @@ const initialState = {
 
 export default function userBookClubsReducer(state = initialState, action) {
     switch (action.type) {
+        case START_LOADING_USER_BOOK_CLUBS:
+            return { ...state, loadingState: "inProgress" };
+        case SUCCESSFULLY_LOADED_USER_BOOK_CLUBS:
+            return {
+            list: action.payload,
+            userBookClubsLoadingState: "successful",
+            };
         case SUCCESSFULLY_CREATED_USER_BOOK_CLUB:
             return {
                 ...state,
