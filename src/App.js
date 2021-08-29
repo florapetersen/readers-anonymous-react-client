@@ -7,6 +7,7 @@ import BookClubShowContainer from "./containers/BookClubShowContainer";
 import BookShowContainer from "./containers/BookShowContainer";
 import BookClubBooksIndexContainer from "./containers/BookClubBooksIndexContainer";
 import BookClubBookFormContainer from "./containers/BookClubBookFormContainer";
+import UserBookClubsIndexContainer from "./containers/UserBookClubsIndexContainer";
 import UserBookClubShowContainer from "./containers/UserBookClubShowContainer";
 
 function App() {
@@ -57,6 +58,7 @@ function App() {
           <Route exact path = "/books/:id" component={BookShowContainer} />
           <Route path = "/bookClubs/:id/book_club_books" component={BookClubBooksIndexContainer} />
           <Route path = "/bookClubBooks/new" component={BookClubBookFormContainer} />
+          <Route path = "/user_book_clubs" component={UserBookClubsIndexContainer} />
           <Route path = "/userBookClubs/:id" component={UserBookClubShowContainer} />
         </Switch>
       </Router>
