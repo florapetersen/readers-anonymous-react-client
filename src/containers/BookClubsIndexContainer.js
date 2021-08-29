@@ -6,6 +6,8 @@ import { deleteBookClub } from "../actions/bookClubs";
 
 class BookClubsIndexContainer extends Component {
 
+    
+
     componentDidMount() {
         this.props.dispatchFetchBookClubs();
     }
