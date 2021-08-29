@@ -12,9 +12,9 @@ const BookClub = ({ bookClub, dispatchCreateUserBookClub}) => {
     function handleClick(e) {
         dispatchCreateUserBookClub(bookClub);
         flashSuccess("Success", <u>{message}</u>, () => alert("Success flash message"))
-        flashError("Error", <u>{message}</u>, () => alert("Error!"))
+        /*flashError("Error", <u>{message}</u>, () => alert("Error!"))
         flashWarning("Warning", <u>{message}</u>, () => alert("Warning!"))
-        flashInfo("Info", <u>{message}</u>, () => alert("Info"))
+        flashInfo("Info", <u>{message}</u>, () => alert("Info"))*/
     }
 
     return (
@@ -24,7 +24,7 @@ const BookClub = ({ bookClub, dispatchCreateUserBookClub}) => {
             <h1>About us: {bookClub.description}</h1></p>
             <button 
                 className="btn btn-success btn-sm"
-                onClick={handleClick()}>
+                onClick={handleClick}>
                 Join this club!
             </button>
         </div>
