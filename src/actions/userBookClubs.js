@@ -14,7 +14,7 @@ export const createUserBookClub = (bookClub) => {
           "Accept": "application/json",
           "Content-Type": "application/json",
         },
-        body: JSON.stringify({user_book_club: {book_club_id: bookClub.id}})
+        body: JSON.stringify({user_book_club: {book_club_id: bookClub.id, book_club_name: bookClub.name}})
       })
         .then(res => {
           if (res.ok) {
