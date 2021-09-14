@@ -2,7 +2,7 @@ import React, { Component } from 'react';
 import { fetchUserBookClub } from "../actions/userBookClubs";
 import { connect } from "react-redux";
 
-class BookClubShowContainer extends Component {
+class UserBookClubShowContainer extends Component {
     state = {
         userBookClub: {},
         loading: true,
