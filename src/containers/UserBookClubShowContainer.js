@@ -41,4 +41,4 @@ const mapDispatchToProps = (dispatch) => {
     }
 };
 
-export default connect(mapStateToProps, mapDispatchToProps)(BookClubShowContainer)
+export default connect(mapStateToProps, mapDispatchToProps)(UserBookClubShowContainer)
