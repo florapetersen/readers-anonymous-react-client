@@ -17,7 +17,7 @@ class UserBookClubListItem extends Component {
     render() {
         return (
         <li className="" key={this.props.userBookClub.id}>
-            <Link to={`/bookClubs/${this.props.userBookClub.id}`}>{this.props.userBookClub.name} </Link>
+            <Link to={`/userBookClubs/${this.props.userBookClub.id}`}>{this.props.userBookClub.name} </Link>
         </li>
     )
     }
