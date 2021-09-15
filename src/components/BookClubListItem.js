@@ -6,21 +6,19 @@ import { Component } from 'react';
 
 class BookClubListItem extends Component {
 
-    state = {
-        stars: 0
-    }
+    //state = {
+        //stars: 0
+    //}
 
-    addStar = () => {
-        this.setState({stars: this.state.stars + 1})
-    }
+    //addStar = () => {
+        //this.setState({stars: this.state.stars + 1})
+    //}
 
     render() {
         return (
         <li className="" key={this.props.bookClub.id}>
             <Link to={`/bookClubs/${this.props.bookClub.id}`}>{this.props.bookClub.name} </Link>
             <p><button onClick={() => this.props.dispatchDeleteBookClub(this.props.bookClub.id)}> DELETE</button></p>
-            <p><button onClick={this.addStar}>Add a Star</button></p>
-            <p>Stars: {this.state.stars}</p>
         </li>
     )
     }
