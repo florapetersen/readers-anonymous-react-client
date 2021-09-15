@@ -20,7 +20,7 @@ class UserBookClubShowContainer extends Component {
         return (
             <section className="max-w-6xl w-11/12 mx-auto mt-16">
                 <h1 className="text-3xl font-bold text-center mb-8">
-                    You are now a member of {this.state.userBookClub.name}!
+                    Welcome to {this.props.userBookClub.name}!
                 </h1>
             </section>
         );
