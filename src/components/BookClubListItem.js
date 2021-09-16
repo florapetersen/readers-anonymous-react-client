@@ -18,7 +18,7 @@ class BookClubListItem extends Component {
         return (
         <li className="" key={this.props.bookClub.id}>
             <Link to={`/bookClubs/${this.props.bookClub.id}`}>{this.props.bookClub.name} </Link>
-            <p><button onClick={() => this.props.dispatchDeleteBookClub(this.props.bookClub.id)}> DELETE</button></p>
+            {/*<p><button onClick={() => this.props.dispatchDeleteBookClub(this.props.bookClub.id)}> DELETE</button></p>*/}
         </li>
     )
     }
