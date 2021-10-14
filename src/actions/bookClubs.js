@@ -10,7 +10,7 @@ import {
 export const fetchBookClubs = () => {
     return (dispatch) => {
         dispatch({type: START_LOADING_BOOK_CLUBS})
-        fetch("http://localhost:3001/book_clubs", {
+        fetch("https://warm-depths-26802.herokuapp.com/book_clubs", {
             method: "get",
             headers: {
                 Accept: "application/json",
@@ -30,7 +30,7 @@ export const fetchBookClubs = () => {
 export const fetchBookClub = (bookClubId) => {
     return (dispatch) => {
       dispatch({ type: START_LOADING_BOOK_CLUB, payload: bookClubId });
-      fetch(`http://localhost:3001/book_clubs/${bookClubId}`)
+      fetch(`https://warm-depths-26802.herokuapp.com/book_clubs/${bookClubId}`)
         .then((res) => res.json())
         .then((bookClubJson) => {
           dispatch({
@@ -43,7 +43,7 @@ export const fetchBookClub = (bookClubId) => {
 
   export const deleteBookClub = (bookClubId) => {
       return (dispatch) => {
-          fetch(`http://localhost:3001/book_clubs/${bookClubId}`, {
+          fetch(`https://warm-depths-26802.herokuapp.com/book_clubs/${bookClubId}`, {
             method: 'DELETE',
             headers: {
               "Accept": "application/json",
@@ -56,7 +56,7 @@ export const fetchBookClub = (bookClubId) => {
 
   export const createBookClub = (formData) => {
     return (dispatch) => {
-      return fetch('http://localhost:3001/book_clubs', {
+      return fetch('https://warm-depths-26802.herokuapp.com/book_clubs', {
         method: 'POST',
         headers: {
           "Accept": "application/json",
