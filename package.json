@@ -46,6 +46,6 @@
     ]
   },
   "devDependencies": {
-    "react-simple-widgets": "^3.0.2"
+    "react-simple-widgets": "^3.1.4"
   }
 }
