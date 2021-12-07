@@ -6,7 +6,7 @@ import {
 
 export const createBookClubBook = (bookClub, book) => {
     return (dispatch) => {
-      return fetch('https://warm-depths-26802.herokuapp.com/book_clubs/:id/book_club_books', {
+      return fetch(`https://warm-depths-26802.herokuapp.com/book_clubs/${bookClubId}/book_club_books`, {
         method: 'POST',
         headers: {
           "Accept": "application/json",
